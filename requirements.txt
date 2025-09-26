@@ -1,5 +1,8 @@
 numpy
-tensorflow
-keras
+tensorflow==2.12.0
 scikit-learn
 matplotlib
+pillow
+flask
+firebase-admin
+opencv-python-headless
