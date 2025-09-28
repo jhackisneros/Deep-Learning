@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Deep Learning Demo MNIST</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="darkmode.css" id="darkmode-css" disabled>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar">
+        <button id="toggle-darkmode-navbar">Modo Oscuro/Claro</button>
+        <span id="user-info"></span>
+    </div>
+
+    <!-- Sección: Demo MNIST -->
+    <section id="demo-mnist">
+        <h2>Demo MNIST</h2>
+        <canvas id="canvas-mnist" width="280" height="280" style="border:1px solid #000;"></canvas>
+        <div>
+            <button id="clear-canvas">Limpiar</button>
+        </div>
+        <p id="prediction-realtime">Predicción en tiempo real: -</p>
+    </section>
+
+    <!-- Sección: Subida de imágenes -->
+    <section id="upload-demo">
+        <h2>Subir Imagen</h2>
+        <input type="file" id="file-input" multiple>
+        <button id="predict-files-btn">Predecir</button>
+        <ul id="file-results"></ul>
+    </section>
+
+    <!-- Sección: Gráficas -->
+    <section id="charts">
+        <h2>Estadísticas</h2>
+        <canvas id="accuracy-chart"></canvas>
+        <canvas id="loss-chart"></canvas>
+    </section>
+
+    <!-- Sección: Generación de QR -->
+    <section id="qr-generator">
+        <h2>Generar QR</h2>
+        <input type="text" id="qr-text" placeholder="Ingresa URL o texto">
+        <button id="generate-qr-btn">Generar QR</button>
+        <br>
+        <img id="qr-img" src="" alt="QR generado">
+    </section>
+
+    <!-- Scripts -->
+    <script src="darkmode.js"></script>
+    <script src="charts.js"></script>
+    <script src="realtime.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
