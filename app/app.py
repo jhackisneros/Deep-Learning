@@ -23,7 +23,7 @@ MODEL_PATH = os.path.join('models', 'mnist_compiled_model.keras')
 
 model = None
 if os.path.exists(MODEL_PATH):
-    model = keras.models.load_model(MODEL_PATH, compile=False)
+    model = keras.models.load_model(MODEL_PATH, compile=False, safe_mode=False)
     model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
 else:
     print(f"Warning: modelo no encontrado en {MODEL_PATH}. Rutas de predicción estarán inactivas hasta entrenar/colocar el modelo.")
