@@ -9,6 +9,7 @@ import json
 from datetime import datetime
 import numpy as np
 import tensorflow as tf
+from tensorflow import keras
 from utils.preprocessing import preprocess_image
 from utils.qr_utils import generate_qr_image_bytes
 from utils.export_utils import export_predictions_to_csv
@@ -19,7 +20,8 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # Try to load the model (if exists)
 MODEL_PATH = os.path.join('models', 'mnist_compiled_model.keras')
-model = tf.keras.models.load_model(MODEL_PATH)
+model = keras.models.load_model("models/mnist_compiled_model.keras", compile=False)
+model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
 if os.path.exists(MODEL_PATH):
     model = tf.keras.models.load_model(MODEL_PATH)
 else:
